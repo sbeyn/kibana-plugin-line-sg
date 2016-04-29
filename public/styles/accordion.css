@@ -1,0 +1,89 @@
+.opt-group {
+  position: relative;
+  overflow: hidden;
+  max-height: 800px;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 14px;
+  z-index: 2;
+}
+
+ul.opt-row {
+  list-style: none;
+  perspective: 900;
+  padding: 0;
+  margin: 0;
+}
+ul.opt-row li:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+ul.opt-row li:nth-of-type(2) {
+  animation-delay: 0.75s;
+}
+ul.opt-row li:nth-of-type(3) {
+  animation-delay: 1s;
+}
+ul.opt-row li:last-of-type {
+  padding-bottom: 0;
+}
+ul.opt-row li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 16px;
+  right: 0;
+}
+ul.opt-row li i:before, ul.opt-row li i:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: #7c7c7c;
+  width: 3px;
+  height: 9px;
+}
+ul.opt-row li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+ul.opt-row li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+ul.opt-row li input[type=checkbox].accordion {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+ul.opt-row li input[type=checkbox]:checked.accordion ~ div.opt-group {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+
+ul.opt-row li input[type=checkbox]:checked.accordion i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+ul.opt-row li input[type=checkbox]:checked.accordion i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+input[type=checkbox]:not(:checked).disgrp ~ div.disgrp {
+    pointer-events:none;
+    color:#AAA;
+    background:#F5F5F5;
+}
+
+div.markdown-vis img {
+	width:100%;
+} 
+
+div.markdown-vis{
+	margin: auto;
+} 
+
+div.visualize-chart ~ div.markdown-vis {
+	overflow: hidden;
+}

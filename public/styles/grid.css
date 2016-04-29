@@ -1,0 +1,36 @@
+.gridgreen line {
+    stroke: green !important;
+}
+.gridgreen text {
+    fill: green !important;
+}
+.gridred line {
+    stroke: red !important;
+}
+.gridred text {
+    fill: red !important;
+}
+.gridyellow line {
+    stroke: yellow !important;
+}
+.gridyellow text {
+    fill: yellow !important;
+}
+.gridblue line {
+    stroke: blue !important;
+}
+.gridblue text {
+    fill: blue !important;
+}
+.gridgrey line {
+    stroke: grey !important;
+}
+.gridgrey text {
+    fill: grey !important;
+}
+.gridblack line {
+    stroke: black !important;
+}
+.gridblack text {
+    fill: black !important;
+}
