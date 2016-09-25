@@ -2,6 +2,7 @@
 kibana-plugin-line
 ==================
 
+![screenshot](https://github.com/sbeyn/kibana-plugin-line-sg/blob/master/screenshot.png)
 
 Introduction
 -------------
