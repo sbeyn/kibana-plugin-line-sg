@@ -41,12 +41,6 @@ ul.opt-row li i:before, ul.opt-row li i:after {
   width: 3px;
   height: 9px;
 }
-ul.opt-row li i:before {
-  transform: translate(-2px, 0) rotate(45deg);
-}
-ul.opt-row li i:after {
-  transform: translate(2px, 0) rotate(-45deg);
-}
 ul.opt-row li input[type=checkbox].accordion {
   position: absolute;
   cursor: pointer;
@@ -63,11 +57,18 @@ ul.opt-row li input[type=checkbox]:checked.accordion ~ div.opt-group {
   transform: translate(0, 50%);
 }
 
-ul.opt-row li input[type=checkbox]:checked.accordion i:before {
+ul.opt-row li i:before {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+ul.opt-row li i:after {
   transform: translate(2px, 0) rotate(45deg);
 }
-ul.opt-row li input[type=checkbox]:checked.accordion i:after {
-  transform: translate(-2px, 0) rotate(-45deg);
+
+ul.opt-row li input[type=checkbox]:checked.accordion ~ i:before {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+ul.opt-row li input[type=checkbox]:checked.accordion ~ i:after {
+  transform: translate(-2px, 0) rotate(45deg);
 }
 
 input[type=checkbox]:not(:checked).disgrp ~ div.disgrp {

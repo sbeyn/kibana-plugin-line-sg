@@ -11,6 +11,10 @@
 		      <option ng-repeat="option in $root.editorLine.typeOptions" value="{{option}}">{{option}}</option>
 		    </select>
             </div>
+            <div class="form-group">
+      	    	hide/unhide data series <input type="checkbox" class="disgrp" ng-model="vis.params.configLine.datahide[key]">
+		</br>
+            </div>
       </div>
     </div>
   </li>
@@ -162,6 +166,7 @@
     <i></i>
     <h4>Range Axis Y and Y2</h4>
     <div class="opt-group">
+    Autoscale&nbsp;<input type="checkbox" class="disgrp" ng-model="vis.params.configLine_autoscale">
             <div class="form-group">
               <label>min Y:</label>
 		    <input type="text" ng-model="vis.params.configLine.rangeminy" class="form-control"/>

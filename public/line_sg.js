@@ -30,7 +30,8 @@ define(function (require) {
 	  configLine_threshold_value2: 90,
 	  configLine_threshold_color2: "#ff0000",
           configLinegrouped: "none",
-	  configLine_xrotate: 0
+	  configLine_xrotate: 0,
+	  configLine_autoscale: false
         },
         editor: require('plugins/line_sg/line_sg_params.html')
       },
@@ -49,9 +50,8 @@ define(function (require) {
           group: 'buckets',
           name: 'segment',
           title: 'X-Axis',
-          min: 0,
-          max: 1,
-          aggFilter: ['terms','date_histogram']
+          min: 0
+          //aggFilter: ['terms','date_histogram','filters']
         }
       ])
     });
