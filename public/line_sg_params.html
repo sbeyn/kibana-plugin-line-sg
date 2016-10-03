@@ -63,11 +63,20 @@
     <div class="opt-group">
       Enable threshold color&nbsp;<input type="checkbox" class="disgrp" ng-model="vis.params.configLine.threshold_enable">
       <div class="disgrp">
-            <div class="form-group">
-		    <select ng-model="vis.params.configLine_threshold_data" class="form-control">
-		      <option ng-repeat="(key, value) in $root.editorLine.label" value="{{key}}">{{ key }}</option>
-		    </select>
-            </div>
+          <div class="form-group">
+		      <select ng-model="vis.params.configLine_threshold_data" class="form-control">
+		          <option ng-repeat="(key, value) in $root.editorLine.label" value="{{key}}">{{ key }}</option>
+		      </select>
+          </div>
+          <div class="form-group">
+          Enable percent values&nbsp;<input type="checkbox" class="disgrp" ng-model="vis.params.configLine.threshold_percent_enable">
+              <div class="disgrp">
+                  <label>Percentage limit:</label>
+                  <select ng-model="vis.params.configLine_threshold_data_limit" class="form-control">
+		              <option ng-repeat="(key, value) in $root.editorLine.label" value="{{key}}">{{ key }}</option>
+		          </select>
+              </div>
+          </div>
             <div class="form-group">
               <label>Level1 Threshold:</label>
 		    <input type="text" ng-model="vis.params.configLine_threshold_value1" class="form-control"/>

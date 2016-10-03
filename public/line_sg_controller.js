@@ -125,14 +125,29 @@ define(function (require) {
 	        config.data.types = $scope.vis.params.configLine.type;
 		config.data.groups = ( $scope.vis.params.configLinegrouped != "none" ) ? [group] : "";
 	        config.data.colors = $scope.vis.params.configLine.colors;
-		config.data.color = ( $scope.vis.params.configLine.threshold_enable ) ? function (color, d) {
-			if ( d.id && d.id === $scope.vis.params.configLine_threshold_data ) {
-				if (d.value >= $scope.vis.params.configLine_threshold_value1 && d.value < $scope.vis.params.configLine_threshold_value2) {
-					color = $scope.vis.params.configLine_threshold_color1;
-				} else if (d.value >= $scope.vis.params.configLine_threshold_value2) {
-					color = $scope.vis.params.configLine_threshold_color2;
+        config.data.color = ( $scope.vis.params.configLine.threshold_enable ) ? function (color, d) {
+			if ( d.id && d.id === $scope.vis.params.configLine_threshold_data) {
+                var tresholdLimits = {};
+                // used when the threshold limit is % from another metric
+                if ($scope.vis.params.configLine.threshold_percent_enable) {
+                    for(i = 0; i < config.data.columns.length; i++) {
+                        //console.log("########Values: " + config.data.columns[i]);
+                        if (config.data.columns[i][0] === $scope.vis.params.configLine_threshold_data_limit) {
+                            tresholdLimits.limit1 = (config.data.columns[i][d.index+1] * $scope.vis.params.configLine_threshold_value1 / 100);
+                            tresholdLimits.limit2 = (config.data.columns[i][d.index+1] * $scope.vis.params.configLine_threshold_value2 / 100);
+                        }                    
+                    }
+                }
+                if (!tresholdLimits.limit1 || !tresholdLimits.limit2) {
+                    tresholdLimits.limit1 = $scope.vis.params.configLine_threshold_value1;
+                    tresholdLimits.limit2 = $scope.vis.params.configLine_threshold_value2;
+                }
+				if (d.value >= tresholdLimits.limit1 && d.value < tresholdLimits.limit2) {
+				    color = $scope.vis.params.configLine_threshold_color1;
+				} else if (d.value >= tresholdLimits.limit2) {
+					 color = $scope.vis.params.configLine_threshold_color2;
 				} 
-			}
+			} 
 			return color;
 		} : {};
 	
