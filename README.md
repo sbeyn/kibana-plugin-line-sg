@@ -2,12 +2,12 @@
 kibana-plugin-line
 ==================
 
-![screenshot](https://github.com/sbeyn/kibana-plugin-line-sg/blob/master/screenshot.png)
+![screenshot](./blob/master/screenshot.png)
 
 Introduction
 -------------
 
-Ce plugin permet la création d'une vue avec plusieurs types de graphiques sur Kibana Version 4.2.2, 4.3.0, 4.4.0, 4.5.0 :
+Ce plugin permet la création d'une vue avec plusieurs types de graphiques sur Kibana Version 4.x et 5.x :
 
 * Choix du type de graphiques
 * Définition du label des courbes
