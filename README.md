@@ -2,7 +2,7 @@
 kibana-plugin-line
 ==================
 
-![screenshot](./blob/master/screenshot.png)
+![screenshot](./screenshot.png)
 
 Introduction
 -------------
