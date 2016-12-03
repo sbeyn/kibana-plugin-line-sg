@@ -50,7 +50,7 @@ Installation
 
 ```
 	$ cd <path>/kibana/installedPlugins
-	$ git clone <depot> line-sg	
+	$ git clone -b 4.x <depot> line-sg	
 ```
 
 
