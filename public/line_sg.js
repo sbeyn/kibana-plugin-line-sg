@@ -10,15 +10,15 @@ define(function (require) {
   require('ui/registry/vis_types').register(MetricVisProvider);
 
   function MetricVisProvider(Private) {
-    var TemplateVisType = Private(require('ui/template_vis_type/TemplateVisType'));
-    var Schemas = Private(require('ui/Vis/Schemas'));
+    var TemplateVisType = Private(require('ui/template_vis_type/template_vis_type'));
+    var Schemas = Private(require('ui/vis/schemas'));
 
     // return the visType object, which kibana will use to display and configure new
     // Vis object of this type.
     return new TemplateVisType({
       name: 'line-sg',
       title: 'Line-sg',
-      description: 'This plugin allows the creation of a view with several types of graphics on Kibana Version 4.2.2, 4.3.0, 4.4.0, 4.5.0',
+      description: 'This plugin allows the creation of a view with several types of graphics on Kibana Version 4.x and 5.x',
       icon: 'fa-diamond',
       template: require('plugins/line_sg/line_sg.html'),
       params: {

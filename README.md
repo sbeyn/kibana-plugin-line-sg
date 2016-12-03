@@ -48,11 +48,17 @@ Liste des librairies ajoutées:
 Installation
 ------------
 
+Pour les version de kibana-4.x
 ```
-	$ cd <path>/kibana/installedPlugins
-	$ git clone <depot> line-sg	
+        $ cd <path>/kibana/installedPlugins
+        $ git clone -b 4.x <depot> line-sg
 ```
 
+Pour les version de kibana-5.x
+```
+        $ cd <path>/kibana/installedPlugins
+        $ git clone <depot> line-sg
+```
 
 Désinstallation
 ---------------
